@@ -14,8 +14,14 @@
   </table>
   <script>
     function entrar() {
-      // Release 2: sem validação, vai direto para o administrador
-      window.location.href = "pg001.html";
+      var usuario = document.getElementById("usuario").value.trim();
+      if (usuario === "") {
+        window.location.href = "msg.html";      // usuário em branco -> erro
+      } else if (usuario === "admin") {
+        window.location.href = "pg001.html";    // admin -> administrador
+      } else {
+        window.location.href = "pg002.html";    // qualquer outro -> operador
+      }
     }
   </script>
 </body>
